@@ -10,7 +10,7 @@
     $descricao = str_replace('#','-',$_POST['descricao']);
 
     //abre arquivo ou cria caso nao exista
-    $arquivo = fopen('../../app_help_desk/arquivo.hd','a');
+    $arquivo = fopen('../BD_app_help_desk/arquivo.hd','a');
 
     $texto =$_SESSION['id'] . '#' . $titulo . '#' . $categoria .'#' . $descricao . PHP_EOL;
     //escreve no arquivo o texto tratado
