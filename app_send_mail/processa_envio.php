@@ -54,13 +54,13 @@
 			$mail->isSMTP();                                            //Send using SMTP
 			$mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
 			$mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-			$mail->Username   = 'seuemail@gmail.com';              //SMTP username /seu email
-			$mail->Password   = 'suasenha';                               //SMTP password /Secnha criada no Gmail,para aplicativos menos seguros
+			$mail->Username   = 'SeuEmail@gmail.com';              //SMTP username /seu email
+			$mail->Password   = 'SuaSenha';                               //SMTP password /Secnha criada no Gmail,para aplicativos menos seguros
 			$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged PHPMailer::ENCRYPTION_STARTTLS
-			$mail->Port       = 587;                                    //TCP port to connect to, use 465 for above
+			$mail->Port       = 587;                                    //TCP port to connect to, use 465 for above/ 587 usada pelo Gmail
 
 			//Recipients
-			$mail->setFrom('danielfaria097@gmail.com', 'Daniel Faria'); //Remetente
+			$mail->setFrom('SeuEmail@gmail.com', 'Seu Nome'); //Remetente
 			$mail->addAddress($mensagem->__get('para'), $mensagem->__get('assunto') );     //Add a recipient
 			//$mail->addReplyTo('info@example.com', 'Information'); //Podemos adicionar quantos destinatario forem necessario fazer sempre o uso do metodo addAddress
 			//$mail->addCC('cc@example.com');
@@ -72,8 +72,8 @@
  
 			//Content
 			$mail->isHTML(true);                                  //Set email format to HTML
-			$mail->Subject =  $mensagem->__get('assunto');        // 'Oi. Eu sou o assunto';
-			$mail->Body    =  $mensagem->__get('mensagem');       //'Oi. Eu sou o conteúdo do <strong>e-mail</strong>';
+			$mail->Subject =  $mensagem->__get('assunto');        // 'Oi. Eu sou o assunto'
+			$mail->Body    =  $mensagem->__get('mensagem');       //'Oi. Eu sou o conteúdo do e-mail'
 			$mail->AltBody = 'É necessario que use um navegador que suporte HTML para ter acesso total ao conteudo dessa mensagem';
 
             $mail->send();
